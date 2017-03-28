@@ -44,12 +44,6 @@ ROOT_URLCONF = 'radfordwallis.urls'
 WSGI_APPLICATION = 'radfordwallis.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -69,14 +63,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-# STATIC_ROOT = os.path.join(DATA_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'radfordwallis', 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'radfordwallis', 'static'),
+# )
 SITE_ID = 1
 
 
