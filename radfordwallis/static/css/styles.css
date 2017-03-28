@@ -1,0 +1,299 @@
+@font-face {
+  font-family: "Neon";
+  src: url(/static/fonts/Neon.ttf) format("truetype");
+}
+
+body {
+    background-color: #fff;
+    padding-top: 56px;
+}
+
+/* Icons */
+
+.material-icons {
+    vertical-align: top;
+}
+
+/* Text */
+
+.clickable {
+    cursor: pointer;
+}
+
+.grey {
+    color: #A9A9A9;
+}
+
+.grey:hover {
+    color: #A9A9A9;
+}
+
+hr.dark {
+    border-top: 1px solid #8c8b8b;
+}
+
+hr.thick {
+    border-top: 2px solid #A9A9A9;
+    opacity: 0.5;
+}
+
+/* Inputs */
+
+.black {
+    background-color: black;
+    color: #A9A9A9;
+    border-color: #A9A9A9;
+    border-right: none;
+    border-radius: .25rem 0 0 .25rem;
+    margin-right: 0;
+}
+
+.black:focus {
+    background-color: black;
+    border-color: #A9A9A9;
+}
+
+.white {
+    background-color: #fff;
+    color: #A9A9A9;
+    border-color: #A9A9A9;
+    border-right: none;
+    border-radius: .25rem 0 0 .25rem;
+    margin-right: 0;
+}
+
+.black:focus {
+    background-color: #fff;
+    border-color: #A9A9A9;
+}
+
+/* Buttons */
+
+.blended {
+    color: #A9A9A9;
+    background-color: black;
+    border-color: #A9A9A9;
+    border-radius: 0 .25rem .25rem 0;
+    border-left: none;
+    margin-left: 0;
+}
+
+.blended:hover {
+    background-color: #A9A9A9;
+    color: black;
+}
+
+.blended:active {
+    color: #A9A9A9;
+}
+
+.blended-white {
+    color: #A9A9A9;
+    background-color: #fff;
+    border-color: #A9A9A9;
+    border-radius: 0 .25rem .25rem 0;
+    border-left: none;
+    margin-left: 0;
+}
+
+.blended-white:hover {
+    background-color: #A9A9A9;
+    color: #fff;
+}
+
+.blended-white:active {
+    color: #A9A9A9;
+}
+
+/* Nav Bar */
+
+.navbar {
+    background-color: black;
+    color: white;
+    /*padding: 1rem 0 0 0;*/
+}
+
+.navbar-nav {
+    float: right;
+    margin-right: 1rem;
+}
+
+.navbar-brand {
+    padding-left: 2rem;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+li.active a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Carousel */
+
+.carousel {
+    max-height: 100%;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  max-width: 10px;
+  height: 10px;
+  margin: 2px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.carousel-indicators .active {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background-color: #fff;
+}
+
+/* Work Page */
+
+    /* Dropdowns */
+.filter_dropdown {
+    font-size: 20px;
+    /*position: relative;*/
+}
+
+.filter_dropdown i {
+    font-size: 40px;
+}
+
+.filter-dropdown-overlay {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: 0.2s ease;
+}
+
+.filter-dropdown-overlay li:hover {
+    background-color: #fff124;
+}
+
+/*.dropdown:hover {
+    color: white;
+}*/
+
+.filter_dropdown:hover .filter-dropdown-overlay {
+    opacity: 0.9;
+    z-index: 10;
+}
+
+/*.oov {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease;
+}*/
+
+.dropdown-filter-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+    /* Work Images */
+
+.img-con {
+    position: relative;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease;
+    background-color: #000000;
+}
+
+.img-con:hover .overlay {
+    opacity: 0.5;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    opacity: 0;
+    transition: .2s ease;
+}
+
+.img-con:hover .title {
+    opacity: 1;
+    color: white;
+}
+
+/* Work Detail */
+
+.quote {
+    font-size: 35px;
+}
+
+/* Contact */
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.award {
+    border-bottom: 1px solid #A9A9A9;
+}
+
+/* Footer */
+
+#footer {
+  padding: 1rem;
+  background-color: #000000;
+  color: #fff;
+  position: relative;
+  margin-top: 0px; /* negative value of footer height */
+  height: 200px;
+  clear: both;
+}
+
+.social-links {
+    list-style: none;
+}
+
+.social-icon {
+  width: 2rem;
+  padding-right: .5rem;
+}

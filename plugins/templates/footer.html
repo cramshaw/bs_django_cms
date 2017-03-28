@@ -1,0 +1,19 @@
+{% load cms_tags %}
+
+<footer id="footer">
+    <div class="row">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
+
+        <div class="col-md-5">
+            <div class="m-2">
+                <span>Subscribe to our newsletter</span>
+                <form class="form-inline">
+                    <input class="form-control black col-sm-7" type="text" placeholder="Enter your email address">
+                    <button class="btn blended clickable col-sm-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>

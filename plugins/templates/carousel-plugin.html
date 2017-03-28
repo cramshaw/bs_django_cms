@@ -1,0 +1,38 @@
+{% load sekizai_tags %}
+{% load cms_tags %}
+
+<div id="homeCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+
+        {% for slide in instance.child_plugin_instances %}
+        <li data-target="#homeCarousel" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %}active{% endif %}"></li>
+        {% endfor %}
+
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+        {% for slide in instance.child_plugin_instances %}
+            {% render_plugin slide %}
+        {% endfor %}
+
+    </div>
+
+    <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+{% addtoblock "js" %}
+<script>
+var interval = parseInt('{{ instance.interval }}');
+
+$('.carousel').carousel({
+  interval: interval
+})
+</script>
+{% endaddtoblock %}

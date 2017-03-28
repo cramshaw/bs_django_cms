@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load sekizai_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-5">
+        {% for image in images %}
+        <div class="col-md-4 my-1">
+            <a href="#{{image}}">
+                <img class="img-fluid" src="/static/images/{{ image }}.png">
+            </a>
+        </div>
+        {% endfor %}
+        <div class="col-md-4 my-1">
+            <a href="#about9">
+                <video src="/static/videos/hearts.mp4" width="100%" loop autoplay></video>
+            </a>
+        </div>
+    </div>
+
+    <hr>
+
+    {% placeholder info %}
+
+    <div class="my-4 col-md-7" id="about1">
+        <strong>Contact Us</strong>
+        <div>Don't be shy! Come and say hello!</div>
+        <div class="mt-2">T +44 (0)20 7833 6494</div>
+        <div class="grey"><a href="mailto:design@radfordwallis.com"></a>design@radfordwallis.com</div>
+    </div>
+
+    <hr>
+
+    <div class="my-4 col-md-7" id="about2">
+        <strong>Find Us</strong>
+        <div>Pop in for a cuppa T and biscuits</div>
+    </div>
+
+
+
+    <div class="my-4 col-md-7">
+        <!-- MAP -->
+
+        <address>Radford Wallis Design<br>
+        326 City Road<br>
+        London EC1V 2PT</address>
+
+        Radford Wallis Limited.<br>
+        Registered No. 5593275.<br>
+        Registered in England & Wales.<br>
+        Registered of ce as shown.
+    </div>
+
+    <hr>
+
+    <div class="my-4 col-md-7" id="about3">
+        <strong>Our Clients</strong>
+        <div>We’re delighted to work with clients from all sectors on a range of different projects.</div>
+    </div>
+
+    <div class="row my-5">
+        {% for image in clients %}
+        <div class="col-md-4 my-1">
+            <img class="img-fluid" src="/static/images/{{ image }}.png">
+        </div>
+        {% endfor %}
+        <!-- <div class="hidden-clients"> -->
+            {% for image in clients %}
+            <div class="col-md-4 my-1 hidden-clients">
+                <img class="img-fluid" src="/static/images/{{ image }}.png">
+            </div>
+            {% endfor %}
+        <!-- </div> -->
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <a class="float-right grey clickable show-more-clients" >Show More<i class="material-icons">add</i></a>
+
+    <hr>
+
+    <div class="my-4 col-md-7" id="about4">
+        <strong>The power of ideas</strong>
+        <p>
+            We are a multi-disciplinary design studio known for original thinking, beautiful work and decisive outcomes for clients.
+        </p>
+        <p>
+            We discover the heart of your message, then use the power of ideas to communicate it and bring it to life for your audience.
+        </p>
+        <p>
+            Our approach has kept us in demand since 1999. We work as a team, bringing together a wealth of experience.
+        </p>
+        <p>
+            We’re acclaimed in commercial property, not-for-pro t and professional services. But what we do is universal. It all begins with a conversation around a question: what do you want to achieve?
+        </p>
+        <p>
+            Get in touch to find out how we can make a difference.
+        </p>
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <hr>
+
+    <div class="my-4 col-md-7" id="about5">
+        <strong>Awards</strong>
+        <div>We have been honored to work with some great clients and even more fortunate to have won some a few awards for the great work we’ve achieved together.
+        </div>
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <hr>
+
+    <div class="row my-5">
+        {% for image in images %}
+        <div class="col-md-4 my-1">
+            <div class="row award pb-2 mx-1">
+                <div class="col-3">
+                    <img class="img-fluid" src="/static/images/award1.png">
+                </div>
+                <div class="col-9">
+                    D&AD Global Awards 2006 Brochures & Catalogues – Shortlisted
+                    16 Palace Street
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <p class="float-right grey">Show More<i class="material-icons">add</i></p>
+
+    <hr>
+
+    <div class="my-4 col-md-7" id="about6">
+        <strong>Social Media</strong>
+        <div>Occasionally we share, tweet, post and email.</div>
+    </div>
+
+    <hr class="grey">
+
+    <div class="my-4 col-md-7">
+        <strong>Press and events</strong>
+        <div>For press enquiries and to discuss lectures and talks, please contact Andrew Wallis.</div>
+
+        <div class="mt-2">+44 (0)20 7833 6494</div>
+        <a href="mailto:aw@radfordwallis.co.uk" class="grey">aw@radfordwallis.co.uk</a>
+
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <hr class="dark">
+
+    <div class="my-4 col-md-7">
+        <strong>Social</strong>
+        <div>
+            <ul class="social-links">
+                <li><a class="grey" href="https://twitter.com/radfordwallis">Twitter</a></li>
+                <li><a class="grey" href="https://www.pinterest.com/radfordwallis/">Pinterest</a></li>
+                <li><a class="grey" href="https://www.linkedin.com/company/radford-wallis">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="grey">
+
+    <div class="my-4 col-md-7" id="about8">
+        <strong>Subscribe to our newsletter</strong>
+        <div>
+            Sed quis tortor non lectus vehicula tristique et ac ligula. Duis tincidunt, nulla in dictum venenatis, purus nisl convallis eros, in condimentum odio enim a velit.
+        </div>
+        <form class="form-inline">
+            <input class="form-control white col-sm-7" type="text" placeholder="Enter your email address">
+            <button class="btn blended-white clickable col-sm-3" type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <hr class="dark">
+
+    <div class="my-4 col-md-7" id="about7">
+        <strong>Work for Us</strong>
+        <div>Occasionally we share, tweet, post, talk and email.</div>
+    </div>
+
+    <hr class="dark">
+
+    <div class="my-4 col-md-7">
+        <strong>Young and enthusiastic? (Placements)</strong>
+        <div>Maecenas interdum consequat purus, quis rutrum enim sodales eu. Curabitur pellentesque bibendum volutpat. Proin quis placerat velit, sed luctus mi. Aliquam fringilla ultricies orci ultricies volutpat. Integer venenatis ipsum non euismod.</div>
+    </div>
+
+    <a href="#" class="grey"><i class="material-icons">keyboard_arrow_up</i> Back to the top of the page</a>
+
+    <hr class="dark">
+
+    <div class="my-4 col-md-7" id="about9">
+        <strong>The Pride</strong>
+        <p>We are an independent, specialist, creative design agency who also has the benefit of being a member of The Pride creative alliance.</p>
+        <p>
+            The Pride allows us to offer our clients the bene ts of a
+            full range of expertise and services, including strategy, engagement, copywriting,  lm, animation, and photography. We pride ourselves on a solid but personable approach to client relationships, working closely with you to deliver projects to the highest standard.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% addtoblock "js" %}
+
+<script>
+$(document).ready(function(){
+    $('.hidden-clients').hide();
+    $('.show-more-clients').click( function() {
+        $('.hidden-clients').show();
+        $(this).hide();
+    })
+});
+</script>
+
+{% endaddtoblock %}

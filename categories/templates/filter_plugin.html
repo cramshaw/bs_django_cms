@@ -1,0 +1,56 @@
+{% load sekizai_tags %}
+
+<div class="filter_dropdown clickable">
+    <span id="filter_type_{{ type }}">All {{ type }}</span>
+    <i class="material-icons">keyboard_arrow_down</i>
+    <div class="filter-dropdown-overlay">
+        <ul class="dropdown-filter-list grey">
+            <li id="display-all {{ type }}" class="fli">Clear</li>
+            {% for option in filter_list %}
+                <li id="{{ option.slug }}" class="fli">{{ option.name }}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% addtoblock "js" %}
+<script>
+var currentDis = '.display-all';
+var currentInd = '.display-all';
+
+$(document).ready(function () {
+    $('li.fli').click(function() {
+        $('.display-all').hide()
+
+        if (this.id.startsWith('discipline')) {
+            var theId = '.' + this.id;
+            currentDis = theId;
+            $('#filter_type_Disciplines').text($(this).text())
+        } else if (this.id.startsWith('industry')) {
+            var theId = '.' + this.id;
+            currentInd = theId;
+            $('#filter_type_Industries').text($(this).text())
+        } else if (this.id.startsWith('display-all')) {
+            var allIds = this.id.split(' ')
+            var theType = allIds[allIds.length-1]
+            if (theType == 'Disciplines') {
+                var theId = '.' + currentInd;
+                currentDis = '.display-all';
+                $('#filter_type_Disciplines').text('All Disciplines');
+            } else if (theType == 'Industries') {
+                var theId = '.' + currentDis;
+                currentInd = '.display-all';
+                $('#filter_type_Industries').text('All Industries');
+            }
+        }
+
+        if (currentInd === currentDis) {
+            $(currentInd).show();
+        } else {
+            $(currentDis + currentInd).show();
+        }
+
+    })
+})
+</script>
+{% endaddtoblock %}

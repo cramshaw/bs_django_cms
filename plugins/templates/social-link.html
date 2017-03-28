@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<ul class="social-links">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</ul>
