@@ -107,8 +107,8 @@ class HRPlugin(CMSPlugin):
 
 class EmailFormPlugin(CMSPlugin):
     COLOURS = (
-        ('dark', 'Black'),
-        ('light', 'White')
+        ('black', 'Black'),
+        ('white', 'White')
         )
     css_class = models.CharField(max_length=5, choices=COLOURS, default='light')
 

@@ -73,7 +73,7 @@ hr.thick {
 
 /* Buttons */
 
-.blended-dark {
+.blended-black {
     color: #A9A9A9;
     background-color: black;
     border-color: #A9A9A9;
@@ -82,16 +82,16 @@ hr.thick {
     margin-left: -2px;
 }
 
-.blended-dark:hover {
+.blended-black:hover {
     background-color: #A9A9A9;
     color: black;
 }
 
-.blended-dark:active {
+.blended-black:active {
     color: #A9A9A9;
 }
 
-.blended-light {
+.blended-white {
     color: #A9A9A9;
     background-color: #fff;
     border-color: #A9A9A9;
@@ -100,12 +100,12 @@ hr.thick {
     margin-left: -2px;
 }
 
-.blended-light:hover {
+.blended-white:hover {
     background-color: #A9A9A9;
     color: #fff;
 }
 
-.blended-light:active {
+.blended-white:active {
     color: #A9A9A9;
 }
 
