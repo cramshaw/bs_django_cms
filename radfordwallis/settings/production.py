@@ -1,3 +1,5 @@
+import os
+
 from radfordwallis.settings.base import *
 
 DEBUG = False

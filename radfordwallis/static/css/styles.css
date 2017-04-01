@@ -8,6 +8,10 @@ body {
     padding-top: 56px;
 }
 
+img {
+    max-width: 100%
+}
+
 /* Icons */
 
 .material-icons {

@@ -23,7 +23,6 @@ class IndustryFilterListPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['filter_list'] = Industry.objects.all()
         context['type'] = 'Industries'
-        print(context)
         context = super(IndustryFilterListPlugin, self).render(context, instance, placeholder)
         return context
 
