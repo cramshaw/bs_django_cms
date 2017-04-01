@@ -73,39 +73,39 @@ hr.thick {
 
 /* Buttons */
 
-.blended {
+.blended-dark {
     color: #A9A9A9;
     background-color: black;
     border-color: #A9A9A9;
     border-radius: 0 .25rem .25rem 0;
     border-left: none;
-    margin-left: 0;
+    margin-left: -2px;
 }
 
-.blended:hover {
+.blended-dark:hover {
     background-color: #A9A9A9;
     color: black;
 }
 
-.blended:active {
+.blended-dark:active {
     color: #A9A9A9;
 }
 
-.blended-white {
+.blended-light {
     color: #A9A9A9;
     background-color: #fff;
     border-color: #A9A9A9;
     border-radius: 0 .25rem .25rem 0;
     border-left: none;
-    margin-left: 0;
+    margin-left: -2px;
 }
 
-.blended-white:hover {
+.blended-light:hover {
     background-color: #A9A9A9;
     color: #fff;
 }
 
-.blended-white:active {
+.blended-light:active {
     color: #A9A9A9;
 }
 

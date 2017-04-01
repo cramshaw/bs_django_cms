@@ -105,6 +105,16 @@ class HRPlugin(CMSPlugin):
     def __str__(self):
         return dict(self.COLOURS)[self.css_class]
 
+class EmailFormPlugin(CMSPlugin):
+    COLOURS = (
+        ('dark', 'Black'),
+        ('light', 'White')
+        )
+    css_class = models.CharField(max_length=5, choices=COLOURS, default='light')
+
+    def __str__(self):
+        return dict(self.COLOURS)[self.css_class]
+
 # Footer
 
 class AddressPlugin(CMSPlugin):

@@ -128,6 +128,18 @@ class CMSScrollToTopPlugin(CMSPluginBase):
 
 plugin_pool.register_plugin(CMSScrollToTopPlugin)
 
+class CMSEmailFormPlugin(CMSPluginBase):
+    name = "Email Subscribe Form"
+    model = EmailFormPlugin
+    allow_children = False
+    render_template = "email_form.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(CMSEmailFormPlugin, self).render(context, instance, placeholder)
+        return context
+
+plugin_pool.register_plugin(CMSEmailFormPlugin)
+
 # Footer
 
 class CMSFooterPlugin(CMSPluginBase):
