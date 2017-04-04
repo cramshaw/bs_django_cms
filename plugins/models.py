@@ -30,7 +30,6 @@ class CarouselPlugin(CMSPlugin):
     interval = models.IntegerField(default=2000, help_text="interval between slides in milliseconds")
 
 class CarouselItemPlugin(CMSPlugin):
-    carousel = models.ForeignKey(CarouselPlugin, related_name='slides')
     background = FilerImageField(null=True, related_name="background")
 
 # About

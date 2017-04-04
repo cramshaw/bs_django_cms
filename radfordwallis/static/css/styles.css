@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Neon";
-  src: url(/static/fonts/Neon.ttf) format("truetype");
-}
-
 body {
     background-color: #fff;
     padding-top: 56px;
@@ -50,6 +45,7 @@ hr.thick {
     border-right: none;
     border-radius: .25rem 0 0 .25rem;
     margin-right: 0;
+    font-style: italic;
 }
 
 .black:focus {
@@ -64,6 +60,7 @@ hr.thick {
     border-right: none;
     border-radius: .25rem 0 0 .25rem;
     margin-right: 0;
+    font-style: italic;
 }
 
 .black:focus {
@@ -138,7 +135,16 @@ li.active a {
 /* Carousel */
 
 .carousel {
-    max-height: 100%;
+    max-height: 100vh;
+}
+
+.carousel-item {
+    max-height: 100vh;
+}
+
+/* Targets not full width Carousels */
+.row .carousel-item img {
+    object-fit: scale-down;
 }
 
 .carousel-indicators {
@@ -284,12 +290,12 @@ li.active a {
 /* Footer */
 
 #footer {
-  padding: 1rem;
+  /*padding: 1rem;*/
   background-color: #000000;
   color: #fff;
   position: relative;
   margin-top: 0px; /* negative value of footer height */
-  height: 200px;
+  /*height: 200px;*/
   clear: both;
 }
 
