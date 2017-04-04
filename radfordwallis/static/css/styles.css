@@ -63,11 +63,6 @@ hr.thick {
     font-style: italic;
 }
 
-.black:focus {
-    background-color: #fff;
-    border-color: #A9A9A9;
-}
-
 /* Buttons */
 
 .blended-black {
@@ -135,11 +130,15 @@ li.active a {
 /* Carousel */
 
 .carousel {
-    max-height: 100vh;
+    max-height: 94vh;
 }
 
 .carousel-item {
-    max-height: 100vh;
+    max-height: 94vh;
+}
+
+.carousel-item img {
+    object-fit: cover;
 }
 
 /* Targets not full width Carousels */
@@ -287,6 +286,12 @@ li.active a {
     border-bottom: 1px solid #A9A9A9;
 }
 
+/* Address */
+
+address p {
+    margin-bottom: 0;
+}
+
 /* Footer */
 
 #footer {
@@ -306,4 +311,14 @@ li.active a {
 .social-icon {
   width: 2rem;
   padding-right: .5rem;
+}
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 2000px) {
+
+    .container {
+        width: 1920px;
+        max-width: 100%;
+    }
 }
