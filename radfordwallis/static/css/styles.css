@@ -115,7 +115,7 @@ button.blended-white:active {
 
 .navbar-nav {
     float: right;
-    margin-right: 1rem;
+    /*margin-right: 1rem;*/
 }
 
 .navbar-brand {
