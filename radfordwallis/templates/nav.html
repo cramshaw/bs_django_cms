@@ -1,21 +1,23 @@
 {% load menu_tags %}
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/">Radford Wallis</a>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-            {% for child in children %}
-            <li class="nav-item {% if child.selected %}active{% endif %}{% if child.sibling %}dropdown{% endif %}">
-                <a class="nav-link" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
-                {% if child.children %}
-                <ul>
-                    {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
-                </ul>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">Radford Wallis</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                {% for child in children %}
+                <li class="nav-item {% if child.selected %}active{% endif %}{% if child.sibling %}dropdown{% endif %}">
+                    <a class="nav-link" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+                    {% if child.children %}
+                    <ul>
+                        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>

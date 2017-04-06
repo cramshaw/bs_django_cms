@@ -6,3 +6,27 @@
 {% block content %}
     {% placeholder "carousel" %}
 {% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block js %}
+<script>
+$(document).ready(function () {
+    var setHeight = function() {
+
+        totalHeight = $(window).height();
+        navHeight = $('.navbar').outerHeight();
+        console.log(totalHeight, navHeight)
+        $('.carousel').height(totalHeight - navHeight);
+        $('.carousel-item').height(totalHeight - navHeight);
+    }
+
+    setHeight();
+
+    $(window).resize(function() {
+      setHeight();
+    });
+})
+</script>
+{% endblock %}

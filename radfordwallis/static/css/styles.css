@@ -1,6 +1,8 @@
 body {
     background-color: #fff;
     padding-top: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 img {
@@ -65,25 +67,26 @@ hr.thick {
 
 /* Buttons */
 
-.blended-black {
+button.blended-black {
     color: #A9A9A9;
     background-color: black;
     border-color: #A9A9A9;
     border-radius: 0 .25rem .25rem 0;
     border-left: none;
     margin-left: -2px;
+    padding: 8px 2px;
 }
 
-.blended-black:hover {
+button.blended-black:hover {
     background-color: #A9A9A9;
     color: black;
 }
 
-.blended-black:active {
+button.blended-black:active {
     color: #A9A9A9;
 }
 
-.blended-white {
+button.blended-white {
     color: #A9A9A9;
     background-color: #fff;
     border-color: #A9A9A9;
@@ -92,12 +95,12 @@ hr.thick {
     margin-left: -2px;
 }
 
-.blended-white:hover {
+button.blended-white:hover {
     background-color: #A9A9A9;
     color: #fff;
 }
 
-.blended-white:active {
+button.blended-white:active {
     color: #A9A9A9;
 }
 
@@ -106,6 +109,7 @@ hr.thick {
 .navbar {
     background-color: black;
     color: white;
+    font-weight: lighter;
     /*padding: 1rem 0 0 0;*/
 }
 
@@ -115,6 +119,7 @@ hr.thick {
 }
 
 .navbar-brand {
+    font-weight: bolder;
     padding-left: 2rem;
 }
 
@@ -201,7 +206,7 @@ li.active a {
 }
 
 .filter-dropdown-overlay li:hover {
-    background-color: #fff124;
+    color: black;
 }
 
 /*.dropdown:hover {
@@ -279,7 +284,7 @@ li.active a {
 
 #map {
     height: 500px;
-    width: 100%;
+    margin: 15px;
 }
 
 .award {

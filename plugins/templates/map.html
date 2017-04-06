@@ -11,7 +11,8 @@
         var cp = {lat: parseFloat(lat), lng: parseFloat(long)};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: parseInt(zoom),
-          center: cp
+          center: cp,
+          mapTypeControl: false
         });
         var marker = new google.maps.Marker({
             map: map,
