@@ -120,7 +120,7 @@ button.blended-white:active {
 
 .navbar-brand {
     font-weight: bolder;
-    padding-left: 2rem;
+    /*padding-left: 2rem;*/
 }
 
 .nav-item a:hover {
