@@ -2,11 +2,15 @@ body {
     background-color: #fff;
     padding-top: 56px;
     font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 img {
     max-width: 100%
+}
+
+strong {
+    font-weight: 700;
 }
 
 /* Icons */
