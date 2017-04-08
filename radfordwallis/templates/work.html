@@ -12,7 +12,7 @@
     </div>
 
 
-    <div class="row my-1">
+    <div class="row">
         {% for child in request.current_page.children.all %}
 
         <div class="col-md-4 my-1 display-all {% for tag in child.workextension.disciplines.all %}{{ tag.slug }} {% endfor %}{% for tag in child.workextension.industries.all %}{{ tag.slug }} {% endfor %}">

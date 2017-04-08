@@ -171,18 +171,18 @@ li.active a {
   display: inline-block;
   max-width: 10px;
   height: 10px;
-  margin: 2px;
+  margin: 4px;
   text-indent: -999px;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 10px;
 }
 
 .carousel-indicators .active {
   width: 10px;
   height: 10px;
-  margin: 2px;
+  margin: 4px;
   background-color: #fff;
 }
 
@@ -191,6 +191,7 @@ li.active a {
     /* Dropdowns */
 .filter_dropdown {
     font-size: 20px;
+    padding: 5px;
     /*position: relative;*/
 }
 
@@ -238,11 +239,16 @@ li.active a {
     padding-left: 1rem;
 }
 
+.fli {
+    line-height: 1.4;
+}
+
     /* Work Images */
 
 .img-con {
     position: relative;
     width: 100%;
+    padding-bottom: 15px;
 }
 
 .overlay {

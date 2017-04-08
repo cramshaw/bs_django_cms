@@ -117,6 +117,17 @@ class CMSHRPlugin(CMSPluginBase):
 
 plugin_pool.register_plugin(CMSHRPlugin)
 
+class CMSScrollToTopTextPlugin(CMSPluginBase):
+    name = "Scroll to top Text"
+    allow_children = False
+    render_template = "scroll-to-top-text.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(CMSScrollToTopTextPlugin, self).render(context, instance, placeholder)
+        return context
+
+plugin_pool.register_plugin(CMSScrollToTopTextPlugin)
+
 class CMSScrollToTopPlugin(CMSPluginBase):
     name = "Scroll to top icon"
     allow_children = False
@@ -189,3 +200,14 @@ class CMSSocialLinkPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(CMSSocialLinkPlugin)
+
+class CMSSocialSharePlugin(CMSPluginBase):
+    name = "Social Share Buttons"
+    require_parent = True
+    render_template = "social-share.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(CMSSocialSharePlugin, self).render(context, instance, placeholder)
+        return context
+
+plugin_pool.register_plugin(CMSSocialSharePlugin)

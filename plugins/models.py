@@ -68,12 +68,15 @@ class AwardPlugin(CMSPlugin):
 # General
 
 class RowPlugin(CMSPlugin):
+    title = models.CharField(max_length=30, default="")
     ymargin = models.IntegerField(help_text="on a scale of 1 to 5, as per Bootstrap, adds margin to top and bottom of row")
 
     def __str__(self):
         return self.css_class()
 
     def css_class(self):
+        if self.title:
+            return self.title
         return 'row my-' + str(self.ymargin)
 
 class ColumnPlugin(CMSPlugin):
@@ -124,6 +127,7 @@ class SocialLinkPlugin(CMSPlugin):
     icon = FilerImageField(null=True, related_name="social_icon")
     text = models.CharField(max_length=30)
     link = models.URLField()
+    open_new_tab = models.BooleanField(default=True)
 
     def __str__(self):
         return self.text
