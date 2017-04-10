@@ -1,10 +1,11 @@
 {% load sekizai_tags %}
 
 <div class="filter_dropdown clickable">
-    <span id="filter_type_{{ type }}">All {{ type }}</span>
-    <i class="material-icons">keyboard_arrow_down</i>
+    <span id="filter_type_{{ type }}">All {{ type }}
+    <i class="material-icons align-middle">keyboard_arrow_down</i>
+    </span>
     <div class="filter-dropdown-overlay">
-        <ul class="dropdown-filter-list grey">
+        <ul class="dropdown-filter-list">
             <li id="display-all {{ type }}" class="fli">Clear</li>
             {% for option in filter_list %}
                 <li id="{{ option.slug }}" class="fli">{{ option.name }}
@@ -20,12 +21,20 @@ var currentInd = '.display-all';
 
 $(document).ready(function () {
 
-    // Set up the filter overlay to full width and offset
-    $('.filter-dropdown-overlay').each(function(index) {
-        console.log()
-        $(this).width($(window).width())
-        $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
-    })
+    var setWidths = function() {
+        // Set up the filter overlay to full width and offset
+        $('.filter-dropdown-overlay').each(function(index) {
+            $(this).width($(window).width())
+            $(this).height($('html').height() - $('.navbar').outerHeight() - $('.filter_dropdown').outerHeight() + 10)
+            $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
+        })
+    }
+
+    $(window).resize(function() {
+      setWidths();
+    });
+
+    setWidths();
 
     $('li.fli').click(function() {
         $('.display-all').hide()

@@ -1,8 +1,11 @@
 <div>
     <address>
+    <a class="normal" href="{{ instance.direct_link }}" target="_blank">
     {{ instance.address|linebreaks }}
+    </a>
     <a href="mailto:{{ instance.email }}" class="grey">{{ instance.email }}</a>
     </address>
+
 </div>
 <div>
     <a href="/terms" class="grey">Terms & Conditions</a>

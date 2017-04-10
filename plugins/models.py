@@ -72,11 +72,11 @@ class RowPlugin(CMSPlugin):
     ymargin = models.IntegerField(help_text="on a scale of 1 to 5, as per Bootstrap, adds margin to top and bottom of row")
 
     def __str__(self):
+        if self.title:
+            return self.title
         return self.css_class()
 
     def css_class(self):
-        if self.title:
-            return self.title
         return 'row my-' + str(self.ymargin)
 
 class ColumnPlugin(CMSPlugin):
@@ -122,6 +122,7 @@ class EmailFormPlugin(CMSPlugin):
 class AddressPlugin(CMSPlugin):
     address = models.TextField()
     email = models.CharField(max_length=200)
+    direct_link = models.URLField(null=True, help_text="Generate this by going to Google Maps and pressing 'Share'")
 
 class SocialLinkPlugin(CMSPlugin):
     icon = FilerImageField(null=True, related_name="social_icon")

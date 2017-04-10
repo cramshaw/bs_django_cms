@@ -20,6 +20,8 @@ $(document).ready(function () {
         console.log(totalHeight, navHeight)
         $('.carousel').height(totalHeight - navHeight);
         $('.carousel-item').height(totalHeight - navHeight);
+        $('.img-fluid').height(totalHeight - navHeight);
+        $('.img-fluid').width($(window).width());
     }
 
     setHeight();
