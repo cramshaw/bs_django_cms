@@ -214,29 +214,57 @@ li.active a {
     color: black;
 }
 
-/*.dropdown:hover {
-    color: white;
-}*/
+.filter_dropdown:hover .filter-dropdown-overlay {
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.dropdown-filter-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fli {
+    line-height: 1.4;
+}
+
+/* work 2*/
+
+    /* Dropdowns */
+.filter_dropdown {
+    font-size: 20px;
+    padding: 5px;
+    /*position: relative;*/
+}
+
+.filter_dropdown i {
+    font-size: 40px;
+}
+
+.filter-dropdown-overlay {
+    position: absolute;
+    background-color: #ffffff;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.2s ease;
+}
+
+.filter-dropdown-overlay li:hover {
+    color: black;
+}
 
 .filter_dropdown:hover .filter-dropdown-overlay {
     opacity: 0.9;
     z-index: 10;
 }
 
-/*.oov {
-    position: absolute;
-    background-color: #fff;
-    opacity: 0;
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: 0.2s ease;
-}*/
-
 .dropdown-filter-list {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 0;
 }
 
 .fli {

@@ -42,7 +42,9 @@ var resizeImages = function() {
     // }
     img.each(function() {
         var width = $(this).width();
+        var height = $(this).height();
         $(this).siblings('.overlay').width(width);
+        $(this).siblings('.overlay').height(height);
     })
 }
 

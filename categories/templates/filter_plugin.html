@@ -19,6 +19,14 @@ var currentDis = '.display-all';
 var currentInd = '.display-all';
 
 $(document).ready(function () {
+
+    // Set up the filter overlay to full width and offset
+    $('.filter-dropdown-overlay').each(function(index) {
+        console.log()
+        $(this).width($(window).width())
+        $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
+    })
+
     $('li.fli').click(function() {
         $('.display-all').hide()
 
