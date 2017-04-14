@@ -15,7 +15,7 @@
     <div class="row">
         {% for child in request.current_page.children.all %}
 
-        <div class="col-md-4 display-all {% for tag in child.workextension.disciplines.all %}{{ tag.slug }} {% endfor %}{% for tag in child.workextension.industries.all %}{{ tag.slug }} {% endfor %}">
+        <div class="col-md-4 no-gutters display-all {% for tag in child.workextension.disciplines.all %}{{ tag.slug }} {% endfor %}{% for tag in child.workextension.industries.all %}{{ tag.slug }} {% endfor %}">
             <a href="{% page_url child.id %}">
                 <div class="img-con">
                   <img class="img-fluid" src="{{ child.workextension.image.url }}">
@@ -45,6 +45,7 @@ var resizeImages = function() {
         var height = $(this).height();
         $(this).siblings('.overlay').width(width);
         $(this).siblings('.overlay').height(height);
+        $(this).siblings('.overlay').css({'top': '5px', 'left' : '5px'});
     })
 }
 

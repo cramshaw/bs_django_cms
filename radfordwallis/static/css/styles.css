@@ -16,11 +16,11 @@ strong {
 a:hover {
     text-decoration: none;
 }
-/*.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
 }
-
+/*
 .no-gutters  > .col, > [class*="col-"] {
     padding-right: 0;
     padding-left: 0;
@@ -241,6 +241,7 @@ li.active a {
 .filter_dropdown {
     font-size: 20px;
     padding-top: 15px;
+    padding-bottom: 10px;
     /*position: relative;*/
 }
 
@@ -280,8 +281,8 @@ li.active a {
 .img-con {
     position: relative;
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 5px;
+    /*padding-bottom: 5px;*/
 }
 
 .overlay {
