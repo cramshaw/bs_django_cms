@@ -13,6 +13,9 @@ strong {
     font-weight: 700;
 }
 
+a:hover {
+    text-decoration: none;
+}
 /*.no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -22,6 +25,10 @@ strong {
     padding-right: 0;
     padding-left: 0;
   }
+}*/
+
+/*div[class*="col-"] {
+    padding: 5px;
 }*/
 
 /* Icons */
@@ -36,11 +43,16 @@ strong {
     cursor: pointer;
 }
 
-.grey, .filter-grey {
+.grey, .filter-grey, .grey:focus, .grey:visited {
     color: #A9A9A9;
+    text-decoration: none;
 }
 
 .grey:hover {
+    color: #000000;
+}
+
+footer .grey:hover {
     color: #ffffff;
 }
 
@@ -141,12 +153,23 @@ button.blended-white:active {
 }
 
 .nav-item a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+}
+
+.nav-item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 li.active a {
     color: white;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0px;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 /* Carousel */
@@ -157,6 +180,19 @@ li.active a {
 
 .carousel-item {
     max-height: 94vh;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width:7% ;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel i {
+    font-weight: lighter;
+    font-size: 5rem;
 }
 
 .carousel-item img {
@@ -204,12 +240,13 @@ li.active a {
     /* Dropdowns */
 .filter_dropdown {
     font-size: 20px;
-    padding: 5px;
+    /*padding: 5px;*/
     /*position: relative;*/
 }
 
 .filter_dropdown i {
-    font-size: 40px;
+    font-size: 30px;
+    vertical-align: top;
 }
 
 .filter-dropdown-overlay {
@@ -236,10 +273,6 @@ li.active a {
 .dropdown-filter-list {
     list-style: none;
     padding-left: 0;
-}
-
-.fli {
-    line-height: 1.4;
 }
 
     /* Work Images */
@@ -271,11 +304,13 @@ li.active a {
 .title {
     color: white;
     font-size: 20px;
+    font-weight: 300;
     position: absolute;
     top: 0.5rem;
     left: 1rem;
     opacity: 0;
     transition: .2s ease;
+    line-height: 1.1;
 }
 
 .img-con:hover .title {
@@ -292,8 +327,8 @@ li.active a {
 /* Contact */
 
 #map {
-    height: 500px;
-    margin: 15px;
+    /*height: 500px;*/
+    margin: 1rem;
 }
 
 .award {
@@ -302,9 +337,9 @@ li.active a {
 
 /* Address */
 
-address .normal {
+/*address .normal {
     color: #ffffff;
-}
+}*/
 
 address p {
     margin-bottom: 0;

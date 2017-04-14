@@ -54,6 +54,7 @@ class MapPlugin(CMSPlugin):
     zoom = models.IntegerField()
     label = models.CharField(max_length=20)
     direct_link = models.URLField(null=True, help_text="Generate this by going to Google Maps and pressing 'Share'")
+    height = models.CharField(default="500px", max_length="10")
 
     def __str__(self):
         return self.label

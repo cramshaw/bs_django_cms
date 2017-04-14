@@ -1,9 +1,10 @@
 {% load sekizai_tags %}
 
-<div class="filter_dropdown clickable">
-    <span id="filter_type_{{ type }}">All {{ type }}
-    <i class="material-icons align-middle">keyboard_arrow_down</i>
-    </span>
+<div class="filter_dropdown clickable pt-1 px-2">
+    <span id="filter_type_{{ type }}">All {{ type }}</span>
+    <!-- Keep span seperate or removes arrow on click -->
+    <!-- <i class="material-icons align-middle">keyboard_arrow_down</i> -->
+    <i class="fa fa-angle-down"></i>
     <div class="filter-dropdown-overlay">
         <ul class="dropdown-filter-list">
             <li id="display-all {{ type }}" class="fli">Clear</li>
@@ -22,11 +23,13 @@ var currentInd = '.display-all';
 $(document).ready(function () {
 
     var setWidths = function() {
+
         // Set up the filter overlay to full width and offset
         $('.filter-dropdown-overlay').each(function(index) {
             $(this).width($(window).width())
             $(this).height($('html').height() - $('.navbar').outerHeight() - $('.filter_dropdown').outerHeight() + 10)
-            $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
+            // $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
+            $(this).css({'padding-left': $(this).siblings('span').offset().left + $(this).siblings('span').position().left, 'left' : -$(this).siblings('span').offset().left});
         })
     }
 
@@ -66,6 +69,8 @@ $(document).ready(function () {
         } else {
             $(currentDis + currentInd).show();
         }
+
+        setWidths();
 
     })
 })
