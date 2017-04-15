@@ -367,6 +367,12 @@ address p {
     margin-bottom: 0;
 }
 
+/* Email Form */
+
+.email-form {
+    padding-left: 5px;
+}
+
 /* Footer */
 
 #footer {
