@@ -381,6 +381,7 @@ address p {
 
 .social-links {
     list-style: none;
+    padding-left: 0;
 }
 
 .social-icon {
