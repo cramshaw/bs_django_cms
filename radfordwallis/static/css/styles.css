@@ -326,6 +326,18 @@ li.active a {
     font-size: 35px;
 }
 
+/* Linked videos */
+
+.section-title {
+    color: #A9A9A9;
+    font-size: 20px;
+    font-weight: 300;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    line-height: 1.1;
+}
+
 /* Contact */
 
 #map {
