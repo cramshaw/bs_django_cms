@@ -11,6 +11,7 @@ img {
 }
 
 strong {
+    -webkit-font-smoothing: antialiased;
     font-weight: 700;
 }
 
@@ -162,6 +163,7 @@ button.blended-white:active {
 
 .navbar-brand {
     font-weight: bolder;
+    -webkit-font-smoothing: antialiased;
     /*padding-left: 2rem;*/
 }
 

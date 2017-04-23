@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
         <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% block css %}{% endblock css %}
         {% render_block "css" %}
     </head>
     <body>
