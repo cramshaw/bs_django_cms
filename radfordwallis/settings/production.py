@@ -2,7 +2,7 @@ import os
 
 from radfordwallis.settings.base import *
 
-DEBUG = False
+DEBUG = os.getenv('DEBUG', False)
 
 ALLOWED_HOSTS = ['*']
 
