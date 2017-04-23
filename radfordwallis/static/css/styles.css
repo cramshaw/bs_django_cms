@@ -469,11 +469,9 @@ address p {
     padding-left: 0;
 }
 
-/*.social-icon {
-  width: 1.5rem;
-  padding-right: .5rem;
-  padding-bottom: .5rem;
-}*/
+.social-icon {
+    vertical-align: top;
+}
 
 /*MEDIA QUERIES*/
 
