@@ -54,7 +54,7 @@ class MapPlugin(CMSPlugin):
     zoom = models.IntegerField()
     label = models.CharField(max_length=20)
     direct_link = models.URLField(null=True, help_text="Generate this by going to Google Maps and pressing 'Share'")
-    height = models.CharField(default="500px", max_length="10")
+    height = models.CharField(default="500px", max_length=10)
 
     def __str__(self):
         return self.label
@@ -122,14 +122,22 @@ class EmailFormPlugin(CMSPlugin):
 
 class AddressPlugin(CMSPlugin):
     address = models.TextField()
+    phone = models.TextField()
     email = models.CharField(max_length=200)
     direct_link = models.URLField(null=True, help_text="Generate this by going to Google Maps and pressing 'Share'")
 
 class SocialLinkPlugin(CMSPlugin):
-    icon = FilerImageField(null=True, related_name="social_icon")
+    # icon = FilerImageField(null=True, related_name="social_icon")
+    icon_class = models.CharField(max_length=20, default='fa fa-twitter')
     text = models.CharField(max_length=30)
     link = models.URLField()
     open_new_tab = models.BooleanField(default=True)
 
     def __str__(self):
         return self.text
+
+class SocialSharePlugin(CMSPlugin):
+    share_to_pinterest = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.share_to_pinterest)

@@ -1,6 +1,6 @@
 {% load cms_tags %}
-<section id="{{ instance.index }}">
+<a name="{{ instance.index }}">
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}
     {% endfor %}
-</section>
+</a>

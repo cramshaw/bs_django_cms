@@ -22,14 +22,25 @@ var currentInd = '.display-all';
 
 $(document).ready(function () {
 
+    $(".filter_dropdown").on("mouseenter", function() {
+        $(this).addClass("hovered");
+        $('main').addClass("select-hovered");
+    }).on("mouseleave", function() {
+        $(this).removeClass("hovered");
+        $('main').removeClass("select-hovered");
+    })
+
     var setWidths = function() {
 
         // Set up the filter overlay to full width and offset
         $('.filter-dropdown-overlay').each(function(index) {
-            $(this).width($(window).width())
-            $(this).height($('html').height() - $('.navbar').outerHeight() - $('.filter_dropdown').outerHeight() + 10)
-            // $(this).css({'padding-left': $(this).siblings('span').position().left + $(this).offset().left, 'left' : -$(this).offset().left});
+            newWidth = $(this).closest('.filter_dropdown').width() + $(this).siblings('span').offset().left + $(this).siblings('span').position().left;
+            if (newWidth > $(this).innerWidth()) {
+                $(this).innerWidth(newWidth);
+            }
             $(this).css({'padding-left': $(this).siblings('span').offset().left + $(this).siblings('span').position().left, 'left' : -$(this).siblings('span').offset().left});
+            // $(this).height($('html').height() - $('.navbar').outerHeight() - $('.filter_dropdown').outerHeight() + 10)
+            // $(this).width($(window).width() + $(this).siblings('span').offset().left)
         })
     }
 
@@ -70,7 +81,15 @@ $(document).ready(function () {
             $(currentDis + currentInd).show();
         }
 
+        $('a.project-link').each(function(a) {
+            link = this.id + '?dis=' + currentDis + '&ind=' + currentInd;
+            $(this).attr('href', link);
+        })
+
         setWidths();
+
+        $(this).closest('filter_dropdown').removeClass("hovered");
+        $('main').removeClass("select-hovered");
 
     })
 })

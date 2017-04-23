@@ -202,6 +202,7 @@ class CMSSocialLinkPlugin(CMSPluginBase):
 plugin_pool.register_plugin(CMSSocialLinkPlugin)
 
 class CMSSocialSharePlugin(CMSPluginBase):
+    model = SocialSharePlugin
     name = "Social Share Buttons"
     require_parent = True
     render_template = "social-share.html"
@@ -211,3 +212,70 @@ class CMSSocialSharePlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(CMSSocialSharePlugin)
+
+class CMSNextLastPagePlugin(CMSPluginBase):
+    name = "Next/Last Buttons"
+    require_parent = False
+    render_template = "next-last.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(CMSNextLastPagePlugin, self).render(context, instance, placeholder)
+        from cms.models import Page
+
+        current_page = context['request'].current_page
+
+        if context['request'].GET.get('dis', None):
+            print('parent', current_page.parent)
+
+            dis = context['request'].GET['dis']
+            ind = context['request'].GET['ind']
+            print(dis, ind)
+
+            params = '?dis={}&ind={}'.format(dis, ind)
+
+            queries = {}
+            if dis != '.display-all':
+                dis = dis.split('-')[-1]
+                queries['workextension__disciplines__id'] = dis
+
+            if ind != '.display-all':
+                ind = ind.split('-')[-1]
+                queries['workextension__industries__id'] = ind
+
+            queries['publisher_is_draft'] = False
+            queries['parent'] = current_page.parent
+
+            pages = Page.objects.filter(**queries)
+
+        else:
+            # reached this page without filtering
+            # All children of current pages parent/sibling
+            pages = Page.objects.filter(publisher_is_draft=False, parent=current_page.parent)
+            params = ''
+
+        n = 0
+        next = None
+        last = None
+
+        for page in pages:
+            print('a')
+
+            if page == current_page:
+                print(n)
+                if n == 0:
+                    next = pages[n+1].get_absolute_url() + params
+                elif n == pages.count() - 1:
+                    last = pages[n-1].get_absolute_url() + params
+                else:
+                    next = pages[n+1].get_absolute_url() + params
+                    last = pages[n-1].get_absolute_url() + params
+
+                context['next'] = next
+                context['last'] = last
+                break
+            else:
+                n += 1
+
+        return context
+
+plugin_pool.register_plugin(CMSNextLastPagePlugin)

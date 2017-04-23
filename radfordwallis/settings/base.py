@@ -195,3 +195,14 @@ THUMBNAIL_PROCESSORS = (
 )
 
 CMS_TOOLBAR = None
+
+CKEDITOR_SETTINGS = {
+    'language': '{{ language }}',
+     'toolbar': [["Format", "Font", "FontSize", "TextColor", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Styles"],
+                ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+                 'JustifyRight', 'JustifyBlock'],
+                ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'], ["Source"],
+                ["Maximize"],
+                ['cmsplugins', '-', 'ShowBlocks']],
+    'skin': 'moono',
+}
