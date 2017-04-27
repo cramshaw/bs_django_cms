@@ -1,11 +1,11 @@
 {% load sekizai_tags %}
 {% load cms_tags %}
 
-<div id="homeCarousel" class="carousel slide" data-ride="carousel">
+<div id="homeCarousel-{{ instance.id }}" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
 
         {% for slide in instance.child_plugin_instances %}
-        <li data-target="#homeCarousel" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %}active{% endif %}"></li>
+        <li data-target="#homeCarousel-{{ instance.id }}" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %}active{% endif %}"></li>
         {% endfor %}
 
     </ol>
@@ -17,11 +17,11 @@
 
     </div>
 
-    <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#homeCarousel-{{ instance.id }}" role="button" data-slide="prev">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#homeCarousel-{{ instance.id }}" role="button" data-slide="next">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
         <span class="sr-only">Next</span>
     </a>
