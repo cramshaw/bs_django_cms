@@ -26,6 +26,12 @@ strong {
 a:hover {
     text-decoration: none;
 }
+
+.container-fluid {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
 .no-gutters {
     padding-right: 0;
     padding-left: 0;
@@ -160,6 +166,12 @@ button.blended-white:active {
     font-weight: lighter;
     /*padding: 1rem 0 0 0;*/
 }
+
+/*
+add to navbar if container is removed
+    width: 100%;
+    display: inherit;
+*/
 
 .navbar-nav {
     float: right;
