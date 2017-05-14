@@ -1,7 +1,7 @@
 {% load cms_tags %}
 
 <footer id="footer">
-    <div class="container py-4">
+    <div class="container-fluid py-4">
         <div class="row">
             {% for plugin in instance.child_plugin_instances %}
                 {% render_plugin plugin %}

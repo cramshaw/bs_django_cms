@@ -160,12 +160,40 @@ button.blended-white:active {
 
 /* Nav Bar */
 
+.navbar-toggleable {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-toggleable > .container-fluid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
 .navbar {
     background-color: black;
     color: white;
     font-weight: lighter;
+    min-height: 52px;
     /*padding: 1rem 0 0 0;*/
+    /*padding-left: 45px;
+    padding-right: 45px;*/
 }
+
+/*.navbar div {
+    width: 100%;
+    position: relative;
+}*/
 
 /*
 add to navbar if container is removed
@@ -507,10 +535,9 @@ address p {
 
 /*MEDIA QUERIES*/
 
-@media (min-width: 2000px) {
+@media (min-width: 1600px) {
 
-    .container-xxl {
-        width: 1920px;
-        max-width: 100%;
+    .container-fluid {
+        max-width: 1500px;
     }
 }
