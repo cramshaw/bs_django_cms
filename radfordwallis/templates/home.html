@@ -28,8 +28,6 @@ $(document).ready(function () {
         navHeight = $('.navbar').outerHeight();
         console.log(totalHeight, navHeight)
         $('.carousel').height(totalHeight - navHeight);
-        // Reduce top by 4 - no clear reason why...
-        $('.carousel').css('top', '-4px');
         $('.carousel-inner').height(totalHeight - navHeight);
         $('.carousel-item').height(totalHeight - navHeight);
         $('.img-fluid').height(totalHeight - navHeight);

@@ -16,14 +16,27 @@
           center: cp,
           mapTypeControl: false
         });
-        var marker = new google.maps.Marker({
-            map: map,
-            place: {
-                placeId: 'ChIJh1pAtq8cdkgR7iN30uhkPow',
-                location: cp
-            },
-            label: "{{ instance.label }}"
-        });
+
+        // var marker = new google.maps.Marker({
+        //     map: map,
+        //     position: cp,
+        //     // place: {
+        //     //     placeId: 'ChIJh1pAtq8cdkgR7iN30uhkPow',
+        //     //     location: cp
+        //     // },
+        //     label: "{{ instance.label }}"
+        // });
+
+        var marker1 = new MarkerWithLabel({
+         position: cp,
+         map: map,
+         labelContent: "{{ instance.label }}",
+         labelAnchor: new google.maps.Point(50, 65),
+         labelClass: "gm-labels", // the CSS class for the label
+         icon: "/static/img/icons/material_place.png"
+       });
+
+
         var styledMapType = new google.maps.StyledMapType(
             [
               {
@@ -46,6 +59,7 @@
                 "elementType": "labels.text.fill",
                 "stylers": [
                   {
+                    "margin-bottom": '10px',
                     "color": "#616161"
                   }
                 ]
@@ -190,6 +204,9 @@
         map.setMapTypeId('styled_map');
       }
     </script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT-gwWTdySQ8sJMWvpal4PWxlQGZhAPK0&callback=initMap">
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT-gwWTdySQ8sJMWvpal4PWxlQGZhAPK0">
+</script>
+<script
+src="/static/js/markerWithLabel.js" onload="initMap()">
 </script>

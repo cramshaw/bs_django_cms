@@ -177,6 +177,7 @@ CMS_TEMPLATES = (
     ('work.html', 'All Work'),
     ('work_detail.html', 'Work Example'),
     ('empty.html', 'Empty'),
+    ('work_in_progress.html', 'Work In Progress'),
 )
 
 CMS_PERMISSION = True
