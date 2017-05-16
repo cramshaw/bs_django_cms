@@ -347,12 +347,22 @@ li.active a {
 
 #drop-title:hover i {
     color: black;
+
 }
 
 .filter_dropdown i {
+    transition: 0.5s ease;
     font-size: 30px;
     vertical-align: middle;
     margin-bottom: 3px;
+}
+
+.filter_dropdown:hover i {
+    -webkit-transform: rotate(-90deg);
+}
+
+.filter_dropdown span {
+    transition: 0.5s ease;
 }
 
 .filter-dropdown-overlay {
