@@ -16,6 +16,7 @@ class WorkExtension(PageExtension):
     description = models.CharField(max_length=50)
     disciplines = models.ManyToManyField(Discipline)
     industries = models.ManyToManyField(Industry)
+    allow_access = models.BooleanField(default=True)
 
     def copy_relations(self, oldinstance, language):
         self.disciplines = oldinstance.disciplines.all()
