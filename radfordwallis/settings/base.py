@@ -207,3 +207,7 @@ CKEDITOR_SETTINGS = {
                 ['cmsplugins', '-', 'ShowBlocks']],
     'skin': 'moono',
 }
+
+DJANGOCMS_VIDEO_TEMPLATES = [
+        ('no-controls', 'No Controls'),
+    ]
