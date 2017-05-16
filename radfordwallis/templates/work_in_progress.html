@@ -11,7 +11,13 @@
         <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
         <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        {% block css %}{% endblock css %}
+        {% block css %}
+        <style>
+        html {
+            overflow: hidden;
+        }
+        </style>
+        {% endblock css %}
         {% render_block "css" %}
     </head>
     <body>
@@ -35,6 +41,24 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         {% render_block "js" %}
-        {% block js %}{% endblock js %}
+        {% block js %}
+        <script>
+        $(document).ready(function () {
+            var setHeight = function() {
+
+                totalHeight = $(window).height();
+                navHeight = $('.navbar').outerHeight();
+                console.log(totalHeight, navHeight)
+                $('video').height(totalHeight - navHeight);
+            }
+
+            setHeight();
+
+            $(window).resize(function() {
+              setHeight();
+            });
+        })
+        </script>
+{% endblock js %}
     </body>
 </html>
