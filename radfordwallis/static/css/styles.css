@@ -1,8 +1,8 @@
 body {
     background-color: #fff;
     padding-top: 52px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: 'Roboto', sans-serif !important; 
+    font-weight: 300 !important;
     line-height: 1.3;
 }
 
@@ -126,8 +126,14 @@ button.blended-black {
     border-radius: 0 .25rem .25rem 0;
     border-left: none;
     margin-left: -2px;
-    padding: 8px 2px;
+    padding-left: 0px;
     text-align: right;
+}
+
+@media (max-width: 992px) {
+    button.blended-black, input.black {
+        font-size: 70%;
+    }
 }
 
 button.blended-black:hover {
@@ -207,7 +213,7 @@ add to navbar if container is removed
 }
 
 .navbar-brand {
-    font-weight: bolder;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     /*padding-left: 2rem;*/
 }
@@ -543,7 +549,7 @@ address p {
 }
 
 .social-icon {
-    vertical-align: left;
+    vertical-align: top;
     padding-right: 3px;
 }
 
