@@ -481,6 +481,8 @@ main.select-hovered:before {
 
 .vid-con {
     position: relative;
+    width: 100%;
+    margin-bottom: -5px;
     /*padding: 5px;*/
 }
 
@@ -538,8 +540,7 @@ address p {
   background-color: #000000;
   color: #fff;
   position: relative;
-  margin-top: 0px; /* negative value of footer height */
-  /*height: 200px;*/
+  margin-top: 10px;
   clear: both;
 }
 
