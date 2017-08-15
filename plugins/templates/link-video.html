@@ -11,12 +11,14 @@
 
 {% addtoblock "js" %}
 <script>
-$('.vid-hov-play').mouseover(function(){
-	console.log('playing')
-    $(this).get(0).play();
-}).mouseout(function(){
-	console.log('stopping')
-    $(this).get(0).pause();
+$('.vid-hov-play').on('canplay', function(){
+	$('.vid-hov-play').mouseover(function(){
+		console.log('playing')
+	    $(this).get(0).play();
+	}).mouseout(function(){
+		console.log('stopping')
+	    $(this).get(0).pause();
+	})
 })
 </script>
 {% endaddtoblock %}
