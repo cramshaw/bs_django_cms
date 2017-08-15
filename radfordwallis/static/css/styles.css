@@ -505,6 +505,7 @@ main.select-hovered:before {
 
 .gm-labels {
     font-size: 15px;
+    font-weight: 700;
 }
 
 .award {
