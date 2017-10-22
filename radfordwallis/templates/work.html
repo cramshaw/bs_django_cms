@@ -17,7 +17,7 @@
 
         <div class="col-md-4 no-gutters display-all {% for tag in child.workextension.disciplines.all %}{{ tag.slug }} {% endfor %}{% for tag in child.workextension.industries.all %}{{ tag.slug }} {% endfor %}">
             <a id="{% page_url child.id %}" class="project-link" {% if child.workextension.allow_access %} href="{% page_url child.id %}" {% endif %}>
-                <div class="img-con">
+                <div class="img-con text-sm-center">
                     <img class="img-fluid" src="{{ child.workextension.image.url }}">
                     <div class="overlay">
                     </div>
