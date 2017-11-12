@@ -4,21 +4,47 @@
     <a href="#{{ instance.jump_to_index }}">
         <div class="vid-con">
             <div class="section-title">{{ instance.title }}</div>
-            <video class="vid-hov-play" src="{{ instance.video.url }}" width="100%" loop></video>
+            <video class="vid-hov-play" src="{{ instance.video.url }}" width="100%"></video>
         </div>
     </a>
 </div>
 
 {% addtoblock "js" %}
 <script>
-$('.vid-hov-play').on('canplay', function(){
-	$('.vid-hov-play').mouseover(function(){
-		console.log('playing')
-	    $(this).get(0).play();
-	}).mouseout(function(){
-		console.log('stopping')
-	    $(this).get(0).pause();
-	})
+var n;
+
+function restartVid(e) { 
+    var activeVids = document.getElementsByClassName('vid-hov-play');
+    activeVids[n].removeEventListener('ended', restartVid);
+    startVid();
+}
+
+function startVid() {
+    n = Math.round(Math.random() * ($('.vid-hov-play').length - 1));
+    var sel = $('.vid-hov-play:eq(' + n.toString() + ')');
+    var activeVid = document.getElementsByClassName('vid-hov-play');
+    activeVid[n].addEventListener('ended', restartVid, false);
+    if (activeVid[n].readyState == 4){
+        sel[0].play();
+    } else {
+        activeVid[n].addEventListener('canplay', function(){
+            sel[0].play();
+        });
+    }
+}
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    startVid();
+} else {
+    $('.vid-hov-play').on('canplay', function(){
+    $('.vid-hov-play').mouseover(function(){
+        console.log('playing')
+        $(this).get(0).play();
+    }).mouseout(function(){
+        console.log('stopping')
+        $(this).get(0).pause();
+    })
 })
+}
 </script>
 {% endaddtoblock %}
