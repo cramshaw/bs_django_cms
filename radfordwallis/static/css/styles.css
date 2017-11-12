@@ -130,12 +130,6 @@ button.blended-black {
     text-align: right;
 }
 
-@media (max-width: 992px) {
-    button.blended-black, input.black {
-        font-size: 70%;
-    }
-}
-
 button.blended-black:hover {
     background-color: #A9A9A9;
     color: black;
@@ -152,6 +146,7 @@ button.blended-white {
     border-radius: 0 .25rem .25rem 0;
     border-left: none;
     margin-left: -2px;
+    padding-left: 0px;
     text-align: right;
 }
 
@@ -162,6 +157,12 @@ button.blended-white:hover {
 
 button.blended-white:active {
     color: #A9A9A9;
+}
+
+@media (max-width: 992px) {
+    button.blended-black, input.black, button.blended-white, input.white {
+        font-size: 70%;
+    }
 }
 
 /* Nav Bar */
@@ -494,6 +495,16 @@ main.select-hovered:before {
     top: 1rem;
     left: 1rem;
     line-height: 1.1;
+}
+
+.gm-labels {
+    white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+    .section-title {
+        font-size: 1rem;
+    }
 }
 
 /* Contact */
